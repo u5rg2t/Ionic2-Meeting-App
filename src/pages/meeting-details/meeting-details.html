@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ (rawMeeting | async)?.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      {{ meeting.name }}
+    </ion-card-header>
+
+    <ion-card-content>
+      <img src="{{ (rawMeeting | async)?.logo }}"/>
+      Show modal: {{ (rawMeeting | async)?.questionactive }}
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Meeting list
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addMeeting()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let meeting of meetings | async" (click)="showMeeting(meeting)">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="{{meeting.logo}}"/>
+        </ion-thumbnail>
+        <h2>{{meeting.name}}</h2>
+        <h2>{{meeting.id}}</h2>      
+      </ion-item>
+
+      <ion-item-options side="right">
+          <button ion-button color="secondary" (click)="editMeeting(meeting)">
+            <ion-icon name="md-create"> Edit</ion-icon>
+          </button>
+      </ion-item-options>
+
+      <ion-item-options side="left">
+          <button ion-button color="danger" (click)="deleteMeeting(meeting.$key)">
+            <ion-icon name="md-trash"> Delete</ion-icon>
+          </button>
+      </ion-item-options>      
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{meeting?.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      {{meeting?.name}}
+    </ion-card-header>
+
+    <ion-card-content>
+
+  
+    <ion-item  *ngFor="let question of meeting?.questions">
+        {{question.question}}
+    </ion-item >
+  
+
+    </ion-card-content>    
+  </ion-card>
+</ion-content>
